@@ -33,8 +33,6 @@ public class JThrowable : JObject {
     }
   }
 
-  public void FUN() { }
-
   public JThrowable() : this(JNIPINVOKE.new_JThrowable(), true) {
   }
 

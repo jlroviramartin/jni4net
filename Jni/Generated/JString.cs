@@ -33,8 +33,6 @@ public class JString : JObject {
     }
   }
 
-  public void FUN() { }
-
   public JString() : this(JNIPINVOKE.new_JString(), true) {
   }
 

@@ -43,8 +43,6 @@ public class JObject : global::System.IDisposable {
     }
   }
 
-  public void FUN() { }
-
   public JObject() : this(JNIPINVOKE.new_JObject(), true) {
   }
 

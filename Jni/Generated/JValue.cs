@@ -43,8 +43,6 @@ public class JValue : global::System.IDisposable {
     }
   }
 
-  public void FUN() { }
-
   public byte z {
     set {
       JNIPINVOKE.JValue_z_set(swigCPtr, value);

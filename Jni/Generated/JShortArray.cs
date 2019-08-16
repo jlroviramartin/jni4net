@@ -33,8 +33,6 @@ public class JShortArray : JArray {
     }
   }
 
-  public void FUN() { }
-
   public JShortArray() : this(JNIPINVOKE.new_JShortArray(), true) {
   }
 

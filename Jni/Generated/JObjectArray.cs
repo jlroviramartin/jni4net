@@ -33,8 +33,6 @@ public class JObjectArray : JArray {
     }
   }
 
-  public void FUN() { }
-
   public JObjectArray() : this(JNIPINVOKE.new_JObjectArray(), true) {
   }
 

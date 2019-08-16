@@ -33,8 +33,6 @@ public class JFloatArray : JArray {
     }
   }
 
-  public void FUN() { }
-
   public JFloatArray() : this(JNIPINVOKE.new_JFloatArray(), true) {
   }
 

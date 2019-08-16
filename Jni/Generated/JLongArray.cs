@@ -33,8 +33,6 @@ public class JLongArray : JArray {
     }
   }
 
-  public void FUN() { }
-
   public JLongArray() : this(JNIPINVOKE.new_JLongArray(), true) {
   }
 

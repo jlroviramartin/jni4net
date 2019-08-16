@@ -33,8 +33,6 @@ public class JBooleanArray : JArray {
     }
   }
 
-  public void FUN() { }
-
   public JBooleanArray() : this(JNIPINVOKE.new_JBooleanArray(), true) {
   }
 

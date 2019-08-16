@@ -43,8 +43,6 @@ public class JNINativeMethod : global::System.IDisposable {
     }
   }
 
-  public void FUN() { }
-
   public string name {
     set {
       JNIPINVOKE.JNINativeMethod_name_set(swigCPtr, value);

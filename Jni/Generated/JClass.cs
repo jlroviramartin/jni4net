@@ -33,8 +33,6 @@ public class JClass : JObject {
     }
   }
 
-  public void FUN() { }
-
   public JClass() : this(JNIPINVOKE.new_JClass(), true) {
   }
 

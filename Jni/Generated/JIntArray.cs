@@ -33,8 +33,6 @@ public class JIntArray : JArray {
     }
   }
 
-  public void FUN() { }
-
   public JIntArray() : this(JNIPINVOKE.new_JIntArray(), true) {
   }
 

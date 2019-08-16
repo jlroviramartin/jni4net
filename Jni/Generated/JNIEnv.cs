@@ -43,8 +43,6 @@ public class JNIEnv : global::System.IDisposable {
     }
   }
 
-  public void FUN() { }
-
   public int GetVersion() {
     int ret = JNIPINVOKE.JNIEnv_GetVersion(swigCPtr);
     return ret;

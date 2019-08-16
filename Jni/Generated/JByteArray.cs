@@ -33,8 +33,6 @@ public class JByteArray : JArray {
     }
   }
 
-  public void FUN() { }
-
   public JByteArray() : this(JNIPINVOKE.new_JByteArray(), true) {
   }
 

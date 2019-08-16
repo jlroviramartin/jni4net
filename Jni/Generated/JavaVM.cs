@@ -43,8 +43,6 @@ public class JavaVM : global::System.IDisposable {
     }
   }
 
-  public void FUN() { }
-
   public int DestroyJavaVM() {
     int ret = JNIPINVOKE.JavaVM_DestroyJavaVM(swigCPtr);
     return ret;

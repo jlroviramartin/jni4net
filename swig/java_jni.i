@@ -62,10 +62,6 @@ typedef struct {
 %array_class(jfloat, jfloat_ARRAY);
 %array_class(jdouble, jdouble_ARRAY);
 
-%typemap(cscode) SWIGTYPE %{
-  public void FUN() { }
-%}
-
 //%typemap(argout) JavaVM **pvm {
 //  %append_output(SWIG_NewPointerObj(%as_voidptr(*$1), $*1_descriptor, SWIG_POINTER_OWN));
 //}

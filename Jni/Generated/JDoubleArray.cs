@@ -33,8 +33,6 @@ public class JDoubleArray : JArray {
     }
   }
 
-  public void FUN() { }
-
   public JDoubleArray() : this(JNIPINVOKE.new_JDoubleArray(), true) {
   }
 

@@ -33,8 +33,6 @@ public class JCharArray : JArray {
     }
   }
 
-  public void FUN() { }
-
   public JCharArray() : this(JNIPINVOKE.new_JCharArray(), true) {
   }
 
