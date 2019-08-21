@@ -29,7 +29,7 @@
     <ClCompile Include="pch.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="win64\jni4net.cxx">
+    <ClCompile Include="win\jni4net.cxx">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

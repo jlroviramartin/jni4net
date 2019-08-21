@@ -12,6 +12,11 @@ namespace Jni
             Config(
                 @"C:\Program Files\Java\jdk-1.8.0_201\",
                 @"C:\Proyectos_Local\csharp\publicos\Jni4Csharp\x64\Debug\");
+
+            //var myPath = new Uri(typeof(MyDll).Assembly.CodeBase).LocalPath;
+            //var myFolder = Path.GetDirectoryName(myPath);
+            if (System.Environment.Is64BitOperatingSystem) {
+            }
         }
 
         public static void Config(String jdkPath, String jni4csharpPath)

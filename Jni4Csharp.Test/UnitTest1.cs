@@ -1,6 +1,7 @@
 ﻿using es.jni;
 using Jni;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Diagnostics;
 
 namespace Jni4Csharp.Test
 {
@@ -20,13 +21,17 @@ namespace Jni4Csharp.Test
             JavaVMInitArgs vm_args = JavaVMInitArgs.create(JNI.JNI_VERSION_1_8, 1);
             vm_args.set(0, options);
 
-            int ret100 = JavaVM.GetDefaultJavaVMInitArgs(vm_args);
+            int flags;
+
             Ref_JavaVM refJavaVM = new Ref_JavaVM();
             Ref_JNIEnv refJNIEnv = new Ref_JNIEnv();
-            int rett = JavaVM.CreateJavaVM(refJavaVM, refJNIEnv, vm_args);
+            flags = JavaVM.CreateJavaVM(refJavaVM, refJNIEnv, vm_args);
+            if (flags == JNI.JNI_ERR) {
+                Debug.WriteLine("Error creando la maquina virtual");
+            }
             JNIEnv jniEnv = refJNIEnv.getValue();
 
-            JClass clazz = jniEnv.FindClass("java.lang.Object");
+            JClass clazz = jniEnv.FindClass("java/lang/Object");
             Debug.WriteLine("Class " + clazz);
         }
     }
