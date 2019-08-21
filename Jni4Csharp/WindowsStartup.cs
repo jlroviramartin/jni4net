@@ -1,31 +1,39 @@
 ﻿using Jni4Csharp.Test.Core;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Diagnostics;
 
 namespace Jni
 {
-    public class WindowsStartup
+    public static class WindowsStartup
     {
-        public static void Config()
+        public static void Config(String jdkPath, String jni4csharpDllPath)
         {
-            Config(
-                @"C:\Program Files\Java\jdk-1.8.0_201\",
-                @"C:\Proyectos_Local\csharp\publicos\Jni4Csharp\x64\Debug\");
+            bool bret;
+            bret = NativeMethods.SetDefaultDllDirectories(NativeMethods.LOAD_LIBRARY_SEARCH_DEFAULT_DIRS);
+            AssertNoError(!bret);
 
-            //var myPath = new Uri(typeof(MyDll).Assembly.CodeBase).LocalPath;
-            //var myFolder = Path.GetDirectoryName(myPath);
-            if (System.Environment.Is64BitOperatingSystem) {
-            }
+            int iret;
+            iret = NativeMethods.AddDllDirectory($@"{jdkPath}\jre\bin\server");
+            AssertNoError(iret == 0);
+
+            iret = NativeMethods.AddDllDirectory($@"{jdkPath}\jre\bin\");
+            AssertNoError(iret == 0);
+
+            iret = NativeMethods.AddDllDirectory($@"{jdkPath}\bin\");
+            AssertNoError(iret == 0);
+
+            iret = NativeMethods.AddDllDirectory(jni4csharpDllPath);
+            AssertNoError(iret == 0);
         }
 
-        public static void Config(String jdkPath, String jni4csharpPath)
+        private static void AssertNoError(bool error)
         {
-            NativeMethods.SetDefaultDllDirectories(NativeMethods.LOAD_LIBRARY_SEARCH_DEFAULT_DIRS);
-            int ret1 = NativeMethods.AddDllDirectory($@"{jdkPath}\jre\bin\server");
-            int ret2 = NativeMethods.AddDllDirectory($@"{jdkPath}\jre\bin\");
-            int ret3 = NativeMethods.AddDllDirectory($@"{jdkPath}\bin\");
-            int ret4 = NativeMethods.AddDllDirectory(jni4csharpPath);
+            if (error)
+            {
+                String msg = "Error: " + NativeMethods.GetLastError();
+                Debug.WriteLine(msg);
+                throw new Exception(msg);
+            }
         }
     }
 }
