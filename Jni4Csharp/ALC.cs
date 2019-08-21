@@ -1,4 +1,6 @@
-﻿using System;
+﻿#if false
+PRUEBA!!! ARGH!!!
+using System;
 using System.Reflection;
 using System.Runtime.Loader;
 
@@ -33,3 +35,4 @@ namespace Jni
         }
     }
 }
+#endif

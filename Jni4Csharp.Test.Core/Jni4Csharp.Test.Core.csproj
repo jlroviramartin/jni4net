@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Jni\Jni.csproj" />
+    <ProjectReference Include="..\Jni4Csharp\Jni4Csharp.csproj" />
   </ItemGroup>
 
 </Project>

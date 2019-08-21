@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Jni\Jni.csproj">
+    <ProjectReference Include="..\Jni4Csharp\Jni4Csharp.csproj">
       <Project>{c0db8b28-96a1-4738-a135-a928ebef3b47}</Project>
-      <Name>Jni</Name>
+      <Name>Jni4Csharp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
