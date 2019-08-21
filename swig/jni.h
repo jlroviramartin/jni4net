@@ -49,18 +49,6 @@ extern "C" {
 #endif
 
 
-typedef jboolean * jboolean_p;
-typedef jbyte * jbyte_p;
-typedef jchar * jchar_p;
-typedef jshort * jshort_p;
-typedef jint * jint_p;
-typedef jlong * jlong_p;
-typedef jfloat * jfloat_p;
-typedef jdouble * jdouble_p;
-typedef const jchar * c_jchar_p;
-typedef void * void_p;
-
-
 /*
  * JNI Types
  */
@@ -158,6 +146,20 @@ typedef enum _jobjectType {
 
 
 #endif /* JNI_TYPES_ALREADY_DEFINED_IN_JNI_MD_H */
+
+
+// Helper typedefs to use Swig
+typedef jboolean * jboolean_p;
+typedef jbyte * jbyte_p;
+typedef jchar * jchar_p;
+typedef jshort * jshort_p;
+typedef jint * jint_p;
+typedef jlong * jlong_p;
+typedef jfloat * jfloat_p;
+typedef jdouble * jdouble_p;
+typedef const jchar * c_jchar_p;
+typedef void * void_p;
+
 
 /*
  * jboolean constants

@@ -6,7 +6,8 @@ set JNI_PATH=C:\Program Files\Java\jdk-1.8\include
 
 mkdir Jni\Generated\
 mkdir Jni\win64\
-swig.exe -verbose -help
-swig.exe -verbose -csharp -c++ -I"\swig" -I"\swig\win32" -v -outdir Jni\Generated\ -o Jni\win64\jni4net.cxx -oh Jni\win64\jni4net.h swig\java_jni.i
+mkdir Jni4CsharpDll\win64\
+rem swig.exe -verbose -help
+swig.exe -verbose -csharp -c++ -dllimport Jni4CsharpDll -I"\swig" -I"\swig\win32" -v -namespace es.jni -outdir Jni\Generated\ -o Jni4CsharpDll\win64\jni4net.cxx -oh Jni4CsharpDll\win64\jni4net.h swig\java_jni.i
 
 endlocal
