@@ -10,20 +10,20 @@
 
 namespace es.jni {
 
-public class PrimitiveArray_jint : global::System.IDisposable {
+public class JFieldID : global::System.IDisposable {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
   protected bool swigCMemOwn;
 
-  internal PrimitiveArray_jint(global::System.IntPtr cPtr, bool cMemoryOwn) {
+  internal JFieldID(global::System.IntPtr cPtr, bool cMemoryOwn) {
     swigCMemOwn = cMemoryOwn;
     swigCPtr = new global::System.Runtime.InteropServices.HandleRef(this, cPtr);
   }
 
-  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(PrimitiveArray_jint obj) {
+  internal static global::System.Runtime.InteropServices.HandleRef getCPtr(JFieldID obj) {
     return (obj == null) ? new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero) : obj.swigCPtr;
   }
 
-  ~PrimitiveArray_jint() {
+  ~JFieldID() {
     Dispose(false);
   }
 
@@ -37,20 +37,14 @@ public class PrimitiveArray_jint : global::System.IDisposable {
       if (swigCPtr.Handle != global::System.IntPtr.Zero) {
         if (swigCMemOwn) {
           swigCMemOwn = false;
-          JNIPINVOKE.delete_PrimitiveArray_jint(swigCPtr);
+          JNIPINVOKE.delete_JFieldID(swigCPtr);
         }
         swigCPtr = new global::System.Runtime.InteropServices.HandleRef(null, global::System.IntPtr.Zero);
       }
     }
   }
 
-  public int get(int i) {
-    int ret = JNIPINVOKE.PrimitiveArray_jint_get(swigCPtr, i);
-    return ret;
-  }
-
-  public void set(int i, int value) {
-    JNIPINVOKE.PrimitiveArray_jint_set(swigCPtr, i, value);
+  public JFieldID() : this(JNIPINVOKE.new_JFieldID(), true) {
   }
 
 }
