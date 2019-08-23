@@ -1,5 +1,10 @@
 %module JNI
 
+%{
+#include "win32/jni_md.h"
+#include "jni.h"
+%}
+
 %include <windows.i>
 %include <typemaps.i>
 %include <cpointer.i>
@@ -10,15 +15,6 @@
 %include <mapping_jboolean.i>
 %include <mapping_jchar.i>
 %include <mapping_void_p.i>
-
-%{
-#include "win32/jni_md.h"
-#include "jni.h"
-%}
-
-/*typedef struct {
-} va_list;*/
-
 
 %include <common.i>
 %include <JavaVMInitArgs.i>
