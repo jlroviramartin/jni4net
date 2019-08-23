@@ -8,6 +8,12 @@
 %ignore JavaVM_::GetEnv;
 %ignore JavaVM_::AttachCurrentThreadAsDaemon;
 
+// Defines the template instantiations
+%template(Ref_JavaVM) Ref<JavaVM>;
+
+%template(Buffer_JavaVM) Buffer<JavaVM>;
+
+
 // Extends JavaVM_ with better alternatives to ignored methods.
 %extend JavaVM_ {
   jint AttachCurrentThread(Ref<JNIEnv>* refenv, JavaVMAttachArgs* args) {
@@ -64,6 +70,3 @@
     return ret;
   }
 }
-
-// Defines the template instantiations
-%template(Ref_JavaVM) Ref<JavaVM>;

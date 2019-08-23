@@ -606,10 +606,14 @@ public unsafe class JNIEnv : global::System.IDisposable {
     if (JNIPINVOKE.SWIGPendingException.Pending) throw JNIPINVOKE.SWIGPendingException.Retrieve();
   }
 
-  public JString NewString(SWIGTYPE_p_unsigned_short unicode, int len) {
-    global::System.IntPtr cPtr = JNIPINVOKE.JNIEnv_NewString(swigCPtr, SWIGTYPE_p_unsigned_short.getCPtr(unicode), len);
-    JString ret = (cPtr == global::System.IntPtr.Zero) ? null : new JString(cPtr, false);
-    return ret;
+  public JString NewString(char[] unicode, int len) {
+    fixed ( char* swig_ptrTo_unicode = unicode ) {
+    {
+      global::System.IntPtr cPtr = JNIPINVOKE.JNIEnv_NewString(swigCPtr, (global::System.IntPtr)swig_ptrTo_unicode, len);
+      JString ret = (cPtr == global::System.IntPtr.Zero) ? null : new JString(cPtr, false);
+      return ret;
+    }
+    }
   }
 
   public int GetStringLength(JString str) {

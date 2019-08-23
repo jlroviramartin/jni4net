@@ -14,7 +14,7 @@ CSHARP_ARRAYS_FIXED(unsigned short, char)
 
 // Creates some mappings for arrays
 %apply unsigned char FIXED[]  {(const jboolean *buf), (jboolean *buf)}; // bool
-%apply unsigned short FIXED[] {(const jchar *buf), (jchar *buf)}; // char
+%apply unsigned short FIXED[] {(const jchar *buf), (jchar *buf), (const jchar *unicode)}; // char
 %apply signed char FIXED[]    {(const jbyte *buf), (jbyte *buf)}; // sbyte
 %apply short FIXED[]          {(const jshort *buf), (jshort *buf)}; // short
 %apply long FIXED[]           {(const jint *buf), (jint *buf)}; // int

@@ -22,12 +22,13 @@
       this->bufferLength = bufferLength;
       this->length = 0;
     }
+
     T** getBuffer() { return buffer; }
     void setBuffer(T** value) { buffer = value; }
+    jsize getBufferLength() { return bufferLength; }
+
     T* get(jsize i) { return buffer[i]; }
     void set(jsize i, T* pobj) { buffer[i] = pobj; }
-
-    jsize getBufferLength() { return bufferLength; }
 
     jsize getLength() { return length; }
     void setLength(jsize value) { length = value; }

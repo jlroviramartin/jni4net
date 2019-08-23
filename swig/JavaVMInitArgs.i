@@ -40,5 +40,3 @@
     jboolean isIgnoreUnrecognized() { return $self->ignoreUnrecognized; }
     void setIgnoreUnrecognized(jboolean value) { $self->ignoreUnrecognized = value; }
 }
-
-%template(Buffer_JavaVM) Buffer<JavaVM>;

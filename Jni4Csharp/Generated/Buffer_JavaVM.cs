@@ -47,14 +47,14 @@ public class Buffer_JavaVM : global::System.IDisposable {
   public Buffer_JavaVM(int bufferLength) : this(JNIPINVOKE.new_Buffer_JavaVM(bufferLength), true) {
   }
 
-  public JavaVM get(int i) {
-    global::System.IntPtr cPtr = JNIPINVOKE.Buffer_JavaVM_get(swigCPtr, i);
-    JavaVM ret = (cPtr == global::System.IntPtr.Zero) ? null : new JavaVM(cPtr, false);
+  public int getBufferLength() {
+    int ret = JNIPINVOKE.Buffer_JavaVM_getBufferLength(swigCPtr);
     return ret;
   }
 
-  public int getBufferLength() {
-    int ret = JNIPINVOKE.Buffer_JavaVM_getBufferLength(swigCPtr);
+  public JavaVM get(int i) {
+    global::System.IntPtr cPtr = JNIPINVOKE.Buffer_JavaVM_get(swigCPtr, i);
+    JavaVM ret = (cPtr == global::System.IntPtr.Zero) ? null : new JavaVM(cPtr, false);
     return ret;
   }
 

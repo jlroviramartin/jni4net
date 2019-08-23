@@ -64,13 +64,14 @@ public class JNINativeMethod : global::System.IDisposable {
     } 
   }
 
-  public SWIGTYPE_p_void fnPtr {
+  public /* cstype void* */ System.IntPtr fnPtr {
     set {
-      JNIPINVOKE.JNINativeMethod_fnPtr_set(swigCPtr, SWIGTYPE_p_void.getCPtr(value));
+      // csvarin void*
+      JNIPINVOKE.JNINativeMethod_fnPtr_set(swigCPtr, /* csin void* */ value);
     } 
     get {
-      global::System.IntPtr cPtr = JNIPINVOKE.JNINativeMethod_fnPtr_get(swigCPtr);
-      SWIGTYPE_p_void ret = (cPtr == global::System.IntPtr.Zero) ? null : new SWIGTYPE_p_void(cPtr, false);
+      // csvarout void*
+      System.IntPtr ret = JNIPINVOKE.JNINativeMethod_fnPtr_get(swigCPtr);
       return ret;
     } 
   }

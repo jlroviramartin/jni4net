@@ -325,12 +325,13 @@ SWIGEXPORT void SWIGSTDCALL SWIGRegisterStringCallback_JNI(SWIG_CSharpStringHelp
       this->bufferLength = bufferLength;
       this->length = 0;
     }
+
     T** getBuffer() { return buffer; }
     void setBuffer(T** value) { buffer = value; }
+    jsize getBufferLength() { return bufferLength; }
+
     T* get(jsize i) { return buffer[i]; }
     void set(jsize i, T* pobj) { buffer[i] = pobj; }
-
-    jsize getBufferLength() { return bufferLength; }
 
     jsize getLength() { return length; }
     void setLength(jsize value) { length = value; }
@@ -482,24 +483,6 @@ SWIGINTERN jint JavaVM__GetCreatedJavaVMs(Buffer< JavaVM > *refvm){
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_new_VaList___() {
-  void * jresult ;
-  va_list *result = 0 ;
-  
-  result = (va_list *)new va_list();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_va_list___(void * jarg1) {
-  va_list *arg1 = (va_list *) 0 ;
-  
-  arg1 = (va_list *)jarg1; 
-  delete arg1;
-}
-
 
 SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_PrimitiveArray_jboolean_get___(void * jarg1, long jarg2) {
   /* ctype jboolean */ jboolean jresult ;
@@ -773,64 +756,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_PrimitiveArray_jdouble___(void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_new_Buffer_JavaVM___(long jarg1) {
-  void * jresult ;
-  jsize arg1 ;
-  Buffer< JavaVM > *result = 0 ;
-  
-  arg1 = (jsize)jarg1; 
-  result = (Buffer< JavaVM > *)new Buffer< JavaVM >(arg1);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_Buffer_JavaVM_get___(void * jarg1, long jarg2) {
-  void * jresult ;
-  Buffer< JavaVM > *arg1 = (Buffer< JavaVM > *) 0 ;
-  jsize arg2 ;
-  JavaVM *result = 0 ;
-  
-  arg1 = (Buffer< JavaVM > *)jarg1; 
-  arg2 = (jsize)jarg2; 
-  result = (JavaVM *)(arg1)->get(arg2);
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT long SWIGSTDCALL CSharp_esfjni_Buffer_JavaVM_getBufferLength___(void * jarg1) {
-  long jresult ;
-  Buffer< JavaVM > *arg1 = (Buffer< JavaVM > *) 0 ;
-  jsize result;
-  
-  arg1 = (Buffer< JavaVM > *)jarg1; 
-  result = (jsize)(arg1)->getBufferLength();
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT long SWIGSTDCALL CSharp_esfjni_Buffer_JavaVM_getLength___(void * jarg1) {
-  long jresult ;
-  Buffer< JavaVM > *arg1 = (Buffer< JavaVM > *) 0 ;
-  jsize result;
-  
-  arg1 = (Buffer< JavaVM > *)jarg1; 
-  result = (jsize)(arg1)->getLength();
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_Buffer_JavaVM___(void * jarg1) {
-  Buffer< JavaVM > *arg1 = (Buffer< JavaVM > *) 0 ;
-  
-  arg1 = (Buffer< JavaVM > *)jarg1; 
-  delete arg1;
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_new_JFieldID___() {
   void * jresult ;
   jfieldID *result = 0 ;
@@ -943,6 +868,64 @@ SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_Ref_JavaVM___(void * jarg1) {
   Ref< JavaVM > *arg1 = (Ref< JavaVM > *) 0 ;
   
   arg1 = (Ref< JavaVM > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_new_Buffer_JavaVM___(long jarg1) {
+  void * jresult ;
+  jsize arg1 ;
+  Buffer< JavaVM > *result = 0 ;
+  
+  arg1 = (jsize)jarg1; 
+  result = (Buffer< JavaVM > *)new Buffer< JavaVM >(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT long SWIGSTDCALL CSharp_esfjni_Buffer_JavaVM_getBufferLength___(void * jarg1) {
+  long jresult ;
+  Buffer< JavaVM > *arg1 = (Buffer< JavaVM > *) 0 ;
+  jsize result;
+  
+  arg1 = (Buffer< JavaVM > *)jarg1; 
+  result = (jsize)(arg1)->getBufferLength();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_Buffer_JavaVM_get___(void * jarg1, long jarg2) {
+  void * jresult ;
+  Buffer< JavaVM > *arg1 = (Buffer< JavaVM > *) 0 ;
+  jsize arg2 ;
+  JavaVM *result = 0 ;
+  
+  arg1 = (Buffer< JavaVM > *)jarg1; 
+  arg2 = (jsize)jarg2; 
+  result = (JavaVM *)(arg1)->get(arg2);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT long SWIGSTDCALL CSharp_esfjni_Buffer_JavaVM_getLength___(void * jarg1) {
+  long jresult ;
+  Buffer< JavaVM > *arg1 = (Buffer< JavaVM > *) 0 ;
+  jsize result;
+  
+  arg1 = (Buffer< JavaVM > *)jarg1; 
+  result = (jsize)(arg1)->getLength();
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_Buffer_JavaVM___(void * jarg1) {
+  Buffer< JavaVM > *arg1 = (Buffer< JavaVM > *) 0 ;
+  
+  arg1 = (Buffer< JavaVM > *)jarg1; 
   delete arg1;
 }
 
@@ -1585,24 +1568,24 @@ SWIGEXPORT char * SWIGSTDCALL CSharp_esfjni_JNINativeMethod_signature_get___(voi
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_JNINativeMethod_fnPtr_set___(void * jarg1, void * jarg2) {
+SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_JNINativeMethod_fnPtr_set___(void * jarg1, /* ctype void* */ void * jarg2) {
   JNINativeMethod *arg1 = (JNINativeMethod *) 0 ;
   void *arg2 = (void *) 0 ;
   
   arg1 = (JNINativeMethod *)jarg1; 
-  arg2 = (void *)jarg2; 
+  /* in void* */ arg2 = jarg2; 
   if (arg1) (arg1)->fnPtr = arg2;
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JNINativeMethod_fnPtr_get___(void * jarg1) {
-  void * jresult ;
+SWIGEXPORT /* ctype void* */ void * SWIGSTDCALL CSharp_esfjni_JNINativeMethod_fnPtr_get___(void * jarg1) {
+  /* ctype void* */ void * jresult ;
   JNINativeMethod *arg1 = (JNINativeMethod *) 0 ;
   void *result = 0 ;
   
   arg1 = (JNINativeMethod *)jarg1; 
   result = (void *) ((arg1)->fnPtr);
-  jresult = (void *)result; 
+  /* out void* */ jresult = result; 
   return jresult;
 }
 
@@ -3639,7 +3622,7 @@ SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_JNIEnv_SetStaticDoubleField___(void * 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JNIEnv_NewString___(void * jarg1, void * jarg2, long jarg3) {
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JNIEnv_NewString___(void * jarg1, unsigned short* jarg2, long jarg3) {
   void * jresult ;
   JNIEnv_ *arg1 = (JNIEnv_ *) 0 ;
   jchar *arg2 = (jchar *) 0 ;
@@ -3647,10 +3630,12 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JNIEnv_NewString___(void * jarg1, vo
   jstring result;
   
   arg1 = (JNIEnv_ *)jarg1; 
-  arg2 = (jchar *)jarg2; 
+  arg2 = jarg2;
   arg3 = (jsize)jarg3; 
   result = (jstring)(arg1)->NewString((jchar const *)arg2,arg3);
   jresult = (void *)result; 
+  
+  
   return jresult;
 }
 
