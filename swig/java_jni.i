@@ -18,8 +18,10 @@
 
 %include <common.i>
 %include <JavaVMInitArgs.i>
-%include <JNIEnv.i>
+%include <JValue.i>
+%include <JObject.i>
 %include <JavaVM.i>
+%include <JNIEnv.i>
 
 // Include the main files
 %include "win32/jni_md.h"

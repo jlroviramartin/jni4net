@@ -44,6 +44,8 @@ public class JValue : global::System.IDisposable {
     }
   }
 
+  public static readonly JValue[] Empty = new JValue[0];
+
   public /* cstype jboolean */ bool z {
     set {
       // csvarin jboolean
@@ -137,6 +139,51 @@ public class JValue : global::System.IDisposable {
       JObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new JObject(cPtr, false);
       return ret;
     } 
+  }
+
+  public static JValue New(/* cstype jboolean */ bool value) {
+    JValue ret = new JValue(JNIPINVOKE.JValue_New__SWIG_0(/* csin jboolean */ value), true);
+    return ret;
+  }
+
+  public static JValue New(sbyte value) {
+    JValue ret = new JValue(JNIPINVOKE.JValue_New__SWIG_1(value), true);
+    return ret;
+  }
+
+  public static JValue New(/* cstype jchar */ char value) {
+    JValue ret = new JValue(JNIPINVOKE.JValue_New__SWIG_2(/* csin jchar */ value), true);
+    return ret;
+  }
+
+  public static JValue New(short value) {
+    JValue ret = new JValue(JNIPINVOKE.JValue_New__SWIG_3(value), true);
+    return ret;
+  }
+
+  public static JValue New(int value) {
+    JValue ret = new JValue(JNIPINVOKE.JValue_New__SWIG_4(value), true);
+    return ret;
+  }
+
+  public static JValue New(long value) {
+    JValue ret = new JValue(JNIPINVOKE.JValue_New__SWIG_5(value), true);
+    return ret;
+  }
+
+  public static JValue New(float value) {
+    JValue ret = new JValue(JNIPINVOKE.JValue_New__SWIG_6(value), true);
+    return ret;
+  }
+
+  public static JValue New(double value) {
+    JValue ret = new JValue(JNIPINVOKE.JValue_New__SWIG_7(value), true);
+    return ret;
+  }
+
+  public static JValue New(JObject value) {
+    JValue ret = new JValue(JNIPINVOKE.JValue_New__SWIG_8(JObject.getCPtr(value)), true);
+    return ret;
   }
 
   public JValue() : this(JNIPINVOKE.new_JValue(), true) {

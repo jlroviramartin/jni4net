@@ -265,30 +265,6 @@ class JNIPINVOKE {
   [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_delete_PrimitiveArray_jdouble___")]
   public static extern void delete_PrimitiveArray_jdouble(global::System.Runtime.InteropServices.HandleRef jarg1);
 
-  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_new_JFieldID___")]
-  public static extern global::System.IntPtr new_JFieldID();
-
-  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_delete_JFieldID___")]
-  public static extern void delete_JFieldID(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_new_JMethodID___")]
-  public static extern global::System.IntPtr new_JMethodID();
-
-  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_delete_JMethodID___")]
-  public static extern void delete_JMethodID(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_Ref_JNIEnv_getValue___")]
-  public static extern global::System.IntPtr Ref_JNIEnv_getValue(global::System.Runtime.InteropServices.HandleRef jarg1);
-
-  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_Ref_JNIEnv_setValue___")]
-  public static extern void Ref_JNIEnv_setValue(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
-
-  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_new_Ref_JNIEnv___")]
-  public static extern global::System.IntPtr new_Ref_JNIEnv();
-
-  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_delete_Ref_JNIEnv___")]
-  public static extern void delete_Ref_JNIEnv(global::System.Runtime.InteropServices.HandleRef jarg1);
-
   [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_Ref_JavaVM_getValue___")]
   public static extern global::System.IntPtr Ref_JavaVM_getValue(global::System.Runtime.InteropServices.HandleRef jarg1);
 
@@ -315,6 +291,108 @@ class JNIPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_delete_Buffer_JavaVM___")]
   public static extern void delete_Buffer_JavaVM(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_new_JFieldID___")]
+  public static extern global::System.IntPtr new_JFieldID();
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_delete_JFieldID___")]
+  public static extern void delete_JFieldID(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_new_JMethodID___")]
+  public static extern global::System.IntPtr new_JMethodID();
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_delete_JMethodID___")]
+  public static extern void delete_JMethodID(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_Ref_JNIEnv_getValue___")]
+  public static extern global::System.IntPtr Ref_JNIEnv_getValue(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_Ref_JNIEnv_setValue___")]
+  public static extern void Ref_JNIEnv_setValue(global::System.Runtime.InteropServices.HandleRef jarg1, global::System.Runtime.InteropServices.HandleRef jarg2);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_new_Ref_JNIEnv___")]
+  public static extern global::System.IntPtr new_Ref_JNIEnv();
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_delete_Ref_JNIEnv___")]
+  public static extern void delete_Ref_JNIEnv(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJClass___")]
+  public static extern global::System.IntPtr JObject_toJClass(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJThrowable___")]
+  public static extern global::System.IntPtr JObject_toJThrowable(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJString___")]
+  public static extern global::System.IntPtr JObject_toJString(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJArray___")]
+  public static extern global::System.IntPtr JObject_toJArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJBooleanArray___")]
+  public static extern global::System.IntPtr JObject_toJBooleanArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJByteArray___")]
+  public static extern global::System.IntPtr JObject_toJByteArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJCharArray___")]
+  public static extern global::System.IntPtr JObject_toJCharArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJShortArray___")]
+  public static extern global::System.IntPtr JObject_toJShortArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJIntArray___")]
+  public static extern global::System.IntPtr JObject_toJIntArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJLongArray___")]
+  public static extern global::System.IntPtr JObject_toJLongArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJFloatArray___")]
+  public static extern global::System.IntPtr JObject_toJFloatArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJDoubleArray___")]
+  public static extern global::System.IntPtr JObject_toJDoubleArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_toJObjectArray___")]
+  public static extern global::System.IntPtr JObject_toJObjectArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJClass___")]
+  public static extern /* imtype jboolean */ bool JObject_isJClass(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJThrowable___")]
+  public static extern /* imtype jboolean */ bool JObject_isJThrowable(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJString___")]
+  public static extern /* imtype jboolean */ bool JObject_isJString(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJArray___")]
+  public static extern /* imtype jboolean */ bool JObject_isJArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJBooleanArray___")]
+  public static extern /* imtype jboolean */ bool JObject_isJBooleanArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJByteArray___")]
+  public static extern /* imtype jboolean */ bool JObject_isJByteArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJCharArray___")]
+  public static extern /* imtype jboolean */ bool JObject_isJCharArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJShortArray___")]
+  public static extern /* imtype jboolean */ bool JObject_isJShortArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJIntArray___")]
+  public static extern /* imtype jboolean */ bool JObject_isJIntArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJLongArray___")]
+  public static extern /* imtype jboolean */ bool JObject_isJLongArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJFloatArray___")]
+  public static extern /* imtype jboolean */ bool JObject_isJFloatArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJDoubleArray___")]
+  public static extern /* imtype jboolean */ bool JObject_isJDoubleArray(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JObject_isJObjectArray___")]
+  public static extern /* imtype jboolean */ bool JObject_isJObjectArray(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_new_JObject___")]
   public static extern global::System.IntPtr new_JObject();
@@ -453,6 +531,33 @@ class JNIPINVOKE {
 
   [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JValue_l_get___")]
   public static extern global::System.IntPtr JValue_l_get(global::System.Runtime.InteropServices.HandleRef jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JValue_New__SWIG_0___")]
+  public static extern global::System.IntPtr JValue_New__SWIG_0(/* imtype jboolean */ bool jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JValue_New__SWIG_1___")]
+  public static extern global::System.IntPtr JValue_New__SWIG_1(sbyte jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JValue_New__SWIG_2___")]
+  public static extern global::System.IntPtr JValue_New__SWIG_2(/* imtype jchar */ char jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JValue_New__SWIG_3___")]
+  public static extern global::System.IntPtr JValue_New__SWIG_3(short jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JValue_New__SWIG_4___")]
+  public static extern global::System.IntPtr JValue_New__SWIG_4(int jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JValue_New__SWIG_5___")]
+  public static extern global::System.IntPtr JValue_New__SWIG_5(long jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JValue_New__SWIG_6___")]
+  public static extern global::System.IntPtr JValue_New__SWIG_6(float jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JValue_New__SWIG_7___")]
+  public static extern global::System.IntPtr JValue_New__SWIG_7(double jarg1);
+
+  [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_JValue_New__SWIG_8___")]
+  public static extern global::System.IntPtr JValue_New__SWIG_8(global::System.Runtime.InteropServices.HandleRef jarg1);
 
   [global::System.Runtime.InteropServices.DllImport("Jni4CsharpDll", EntryPoint="CSharp_esfjni_new_JValue___")]
   public static extern global::System.IntPtr new_JValue();

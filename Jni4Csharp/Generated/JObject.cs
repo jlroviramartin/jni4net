@@ -44,6 +44,166 @@ public class JObject : global::System.IDisposable {
     }
   }
 
+  public bool isNull() {
+    return swigCPtr.Handle == System.IntPtr.Zero;
+  }
+
+  public JClass toJClass() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJClass(swigCPtr);
+    JClass ret = (cPtr == global::System.IntPtr.Zero) ? null : new JClass(cPtr, false);
+    return ret;
+  }
+
+  public JThrowable toJThrowable() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJThrowable(swigCPtr);
+    JThrowable ret = (cPtr == global::System.IntPtr.Zero) ? null : new JThrowable(cPtr, false);
+    return ret;
+  }
+
+  public JString toJString() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJString(swigCPtr);
+    JString ret = (cPtr == global::System.IntPtr.Zero) ? null : new JString(cPtr, false);
+    return ret;
+  }
+
+  public JArray toJArray() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJArray(swigCPtr);
+    JArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JArray(cPtr, false);
+    return ret;
+  }
+
+  public JBooleanArray toJBooleanArray() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJBooleanArray(swigCPtr);
+    JBooleanArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JBooleanArray(cPtr, false);
+    return ret;
+  }
+
+  public JByteArray toJByteArray() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJByteArray(swigCPtr);
+    JByteArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JByteArray(cPtr, false);
+    return ret;
+  }
+
+  public JCharArray toJCharArray() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJCharArray(swigCPtr);
+    JCharArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JCharArray(cPtr, false);
+    return ret;
+  }
+
+  public JShortArray toJShortArray() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJShortArray(swigCPtr);
+    JShortArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JShortArray(cPtr, false);
+    return ret;
+  }
+
+  public JIntArray toJIntArray() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJIntArray(swigCPtr);
+    JIntArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JIntArray(cPtr, false);
+    return ret;
+  }
+
+  public JLongArray toJLongArray() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJLongArray(swigCPtr);
+    JLongArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JLongArray(cPtr, false);
+    return ret;
+  }
+
+  public JFloatArray toJFloatArray() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJFloatArray(swigCPtr);
+    JFloatArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JFloatArray(cPtr, false);
+    return ret;
+  }
+
+  public JDoubleArray toJDoubleArray() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJDoubleArray(swigCPtr);
+    JDoubleArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JDoubleArray(cPtr, false);
+    return ret;
+  }
+
+  public JObjectArray toJObjectArray() {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObject_toJObjectArray(swigCPtr);
+    JObjectArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JObjectArray(cPtr, false);
+    return ret;
+  }
+
+  public /* cstype jboolean */ bool isJClass()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJClass(swigCPtr);
+    return ret;
+  } 
+
+  public /* cstype jboolean */ bool isJThrowable()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJThrowable(swigCPtr);
+    return ret;
+  } 
+
+  public /* cstype jboolean */ bool isJString()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJString(swigCPtr);
+    return ret;
+  } 
+
+  public /* cstype jboolean */ bool isJArray()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJArray(swigCPtr);
+    return ret;
+  } 
+
+  public /* cstype jboolean */ bool isJBooleanArray()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJBooleanArray(swigCPtr);
+    return ret;
+  } 
+
+  public /* cstype jboolean */ bool isJByteArray()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJByteArray(swigCPtr);
+    return ret;
+  } 
+
+  public /* cstype jboolean */ bool isJCharArray()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJCharArray(swigCPtr);
+    return ret;
+  } 
+
+  public /* cstype jboolean */ bool isJShortArray()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJShortArray(swigCPtr);
+    return ret;
+  } 
+
+  public /* cstype jboolean */ bool isJIntArray()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJIntArray(swigCPtr);
+    return ret;
+  } 
+
+  public /* cstype jboolean */ bool isJLongArray()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJLongArray(swigCPtr);
+    return ret;
+  } 
+
+  public /* cstype jboolean */ bool isJFloatArray()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJFloatArray(swigCPtr);
+    return ret;
+  } 
+
+  public /* cstype jboolean */ bool isJDoubleArray()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJDoubleArray(swigCPtr);
+    return ret;
+  } 
+
+  public /* cstype jboolean */ bool isJObjectArray()  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JObject_isJObjectArray(swigCPtr);
+    return ret;
+  } 
+
   public JObject() : this(JNIPINVOKE.new_JObject(), true) {
   }
 

@@ -365,6 +365,41 @@ typedef PrimitiveArray<jfloat, jfloat> PrimitiveArray_jfloat;
 typedef PrimitiveArray<jdouble, jdouble> PrimitiveArray_jdouble;
 
 
+SWIGINTERN _jclass *_jobject_toJClass(_jobject *self){ return (_jclass*)(self); }
+SWIGINTERN _jthrowable *_jobject_toJThrowable(_jobject *self){ return (_jthrowable*)(self); }
+SWIGINTERN _jstring *_jobject_toJString(_jobject *self){ return (_jstring*)(self); }
+SWIGINTERN _jarray *_jobject_toJArray(_jobject *self){ return (_jarray*)(self); }
+SWIGINTERN _jbooleanArray *_jobject_toJBooleanArray(_jobject *self){ return (_jbooleanArray*)(self); }
+SWIGINTERN _jbyteArray *_jobject_toJByteArray(_jobject *self){ return (_jbyteArray*)(self); }
+SWIGINTERN _jcharArray *_jobject_toJCharArray(_jobject *self){ return (_jcharArray*)(self); }
+SWIGINTERN _jshortArray *_jobject_toJShortArray(_jobject *self){ return (_jshortArray*)(self); }
+SWIGINTERN _jintArray *_jobject_toJIntArray(_jobject *self){ return (_jintArray*)(self); }
+SWIGINTERN _jlongArray *_jobject_toJLongArray(_jobject *self){ return (_jlongArray*)(self); }
+SWIGINTERN _jfloatArray *_jobject_toJFloatArray(_jobject *self){ return (_jfloatArray*)(self); }
+SWIGINTERN _jdoubleArray *_jobject_toJDoubleArray(_jobject *self){ return (_jdoubleArray*)(self); }
+SWIGINTERN _jobjectArray *_jobject_toJObjectArray(_jobject *self){ return (_jobjectArray*)(self); }
+SWIGINTERN jboolean _jobject_isJClass(_jobject *self){ return (_jclass*)(self) != NULL; }
+SWIGINTERN jboolean _jobject_isJThrowable(_jobject *self){ return (_jthrowable*)(self) != NULL; }
+SWIGINTERN jboolean _jobject_isJString(_jobject *self){ return (_jstring*)(self) != NULL; }
+SWIGINTERN jboolean _jobject_isJArray(_jobject *self){ return (_jarray*)(self) != NULL; }
+SWIGINTERN jboolean _jobject_isJBooleanArray(_jobject *self){ return (_jbooleanArray*)(self) != NULL; }
+SWIGINTERN jboolean _jobject_isJByteArray(_jobject *self){ return (_jbyteArray*)(self) != NULL; }
+SWIGINTERN jboolean _jobject_isJCharArray(_jobject *self){ return (_jcharArray*)(self) != NULL; }
+SWIGINTERN jboolean _jobject_isJShortArray(_jobject *self){ return (_jshortArray*)(self) != NULL; }
+SWIGINTERN jboolean _jobject_isJIntArray(_jobject *self){ return (_jintArray*)(self) != NULL; }
+SWIGINTERN jboolean _jobject_isJLongArray(_jobject *self){ return (_jlongArray*)(self) != NULL; }
+SWIGINTERN jboolean _jobject_isJFloatArray(_jobject *self){ return (_jfloatArray*)(self) != NULL; }
+SWIGINTERN jboolean _jobject_isJDoubleArray(_jobject *self){ return (_jdoubleArray*)(self) != NULL; }
+SWIGINTERN jboolean _jobject_isJObjectArray(_jobject *self){ return (_jobjectArray*)(self) != NULL; }
+SWIGINTERN jvalue jvalue_New__SWIG_0(jboolean value){ jvalue v; v.z = value; return v; }
+SWIGINTERN jvalue jvalue_New__SWIG_1(jbyte value){ jvalue v; v.b = value; return v; }
+SWIGINTERN jvalue jvalue_New__SWIG_2(jchar value){ jvalue v; v.c = value; return v; }
+SWIGINTERN jvalue jvalue_New__SWIG_3(jshort value){ jvalue v; v.s = value; return v; }
+SWIGINTERN jvalue jvalue_New__SWIG_4(jint value){ jvalue v; v.i = value; return v; }
+SWIGINTERN jvalue jvalue_New__SWIG_5(jlong value){ jvalue v; v.j = value; return v; }
+SWIGINTERN jvalue jvalue_New__SWIG_6(jfloat value){ jvalue v; v.f = value; return v; }
+SWIGINTERN jvalue jvalue_New__SWIG_7(jdouble value){ jvalue v; v.d = value; return v; }
+SWIGINTERN jvalue jvalue_New__SWIG_8(jobject value){ jvalue v; v.l = value; return v; }
 SWIGINTERN PrimitiveArray_jboolean *JNIEnv__GetBooleanArrayElements_2(JNIEnv_ *self,jbooleanArray array,jboolean *isCopy){
       return PrimitiveArray_jboolean::create(self->GetBooleanArrayElements(array,isCopy));
     }
@@ -756,82 +791,6 @@ SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_PrimitiveArray_jdouble___(void 
 }
 
 
-SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_new_JFieldID___() {
-  void * jresult ;
-  jfieldID *result = 0 ;
-  
-  result = (jfieldID *)new jfieldID();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_JFieldID___(void * jarg1) {
-  jfieldID *arg1 = (jfieldID *) 0 ;
-  
-  arg1 = (jfieldID *)jarg1; 
-  delete arg1;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_new_JMethodID___() {
-  void * jresult ;
-  jmethodID *result = 0 ;
-  
-  result = (jmethodID *)new jmethodID();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_JMethodID___(void * jarg1) {
-  jmethodID *arg1 = (jmethodID *) 0 ;
-  
-  arg1 = (jmethodID *)jarg1; 
-  delete arg1;
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_Ref_JNIEnv_getValue___(void * jarg1) {
-  void * jresult ;
-  Ref< JNIEnv > *arg1 = (Ref< JNIEnv > *) 0 ;
-  JNIEnv *result = 0 ;
-  
-  arg1 = (Ref< JNIEnv > *)jarg1; 
-  result = (JNIEnv *)(arg1)->getValue();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_Ref_JNIEnv_setValue___(void * jarg1, void * jarg2) {
-  Ref< JNIEnv > *arg1 = (Ref< JNIEnv > *) 0 ;
-  JNIEnv *arg2 = (JNIEnv *) 0 ;
-  
-  arg1 = (Ref< JNIEnv > *)jarg1; 
-  arg2 = (JNIEnv *)jarg2; 
-  (arg1)->setValue(arg2);
-}
-
-
-SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_new_Ref_JNIEnv___() {
-  void * jresult ;
-  Ref< JNIEnv > *result = 0 ;
-  
-  result = (Ref< JNIEnv > *)new Ref< JNIEnv >();
-  jresult = (void *)result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_Ref_JNIEnv___(void * jarg1) {
-  Ref< JNIEnv > *arg1 = (Ref< JNIEnv > *) 0 ;
-  
-  arg1 = (Ref< JNIEnv > *)jarg1; 
-  delete arg1;
-}
-
-
 SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_Ref_JavaVM_getValue___(void * jarg1) {
   void * jresult ;
   Ref< JavaVM > *arg1 = (Ref< JavaVM > *) 0 ;
@@ -927,6 +886,394 @@ SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_Buffer_JavaVM___(void * jarg1) 
   
   arg1 = (Buffer< JavaVM > *)jarg1; 
   delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_new_JFieldID___() {
+  void * jresult ;
+  jfieldID *result = 0 ;
+  
+  result = (jfieldID *)new jfieldID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_JFieldID___(void * jarg1) {
+  jfieldID *arg1 = (jfieldID *) 0 ;
+  
+  arg1 = (jfieldID *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_new_JMethodID___() {
+  void * jresult ;
+  jmethodID *result = 0 ;
+  
+  result = (jmethodID *)new jmethodID();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_JMethodID___(void * jarg1) {
+  jmethodID *arg1 = (jmethodID *) 0 ;
+  
+  arg1 = (jmethodID *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_Ref_JNIEnv_getValue___(void * jarg1) {
+  void * jresult ;
+  Ref< JNIEnv > *arg1 = (Ref< JNIEnv > *) 0 ;
+  JNIEnv *result = 0 ;
+  
+  arg1 = (Ref< JNIEnv > *)jarg1; 
+  result = (JNIEnv *)(arg1)->getValue();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_Ref_JNIEnv_setValue___(void * jarg1, void * jarg2) {
+  Ref< JNIEnv > *arg1 = (Ref< JNIEnv > *) 0 ;
+  JNIEnv *arg2 = (JNIEnv *) 0 ;
+  
+  arg1 = (Ref< JNIEnv > *)jarg1; 
+  arg2 = (JNIEnv *)jarg2; 
+  (arg1)->setValue(arg2);
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_new_Ref_JNIEnv___() {
+  void * jresult ;
+  Ref< JNIEnv > *result = 0 ;
+  
+  result = (Ref< JNIEnv > *)new Ref< JNIEnv >();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_esfjni_delete_Ref_JNIEnv___(void * jarg1) {
+  Ref< JNIEnv > *arg1 = (Ref< JNIEnv > *) 0 ;
+  
+  arg1 = (Ref< JNIEnv > *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJClass___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jclass *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jclass *)_jobject_toJClass(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJThrowable___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jthrowable *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jthrowable *)_jobject_toJThrowable(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJString___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jstring *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jstring *)_jobject_toJString(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJArray___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jarray *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jarray *)_jobject_toJArray(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJBooleanArray___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jbooleanArray *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jbooleanArray *)_jobject_toJBooleanArray(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJByteArray___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jbyteArray *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jbyteArray *)_jobject_toJByteArray(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJCharArray___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jcharArray *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jcharArray *)_jobject_toJCharArray(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJShortArray___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jshortArray *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jshortArray *)_jobject_toJShortArray(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJIntArray___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jintArray *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jintArray *)_jobject_toJIntArray(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJLongArray___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jlongArray *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jlongArray *)_jobject_toJLongArray(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJFloatArray___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jfloatArray *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jfloatArray *)_jobject_toJFloatArray(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJDoubleArray___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jdoubleArray *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jdoubleArray *)_jobject_toJDoubleArray(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JObject_toJObjectArray___(void * jarg1) {
+  void * jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  _jobjectArray *result = 0 ;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (_jobjectArray *)_jobject_toJObjectArray(arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJClass___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJClass(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJThrowable___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJThrowable(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJString___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJString(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJArray___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJArray(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJBooleanArray___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJBooleanArray(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJByteArray___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJByteArray(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJCharArray___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJCharArray(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJShortArray___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJShortArray(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJIntArray___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJIntArray(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJLongArray___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJLongArray(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJFloatArray___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJFloatArray(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJDoubleArray___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJDoubleArray(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT /* ctype jboolean */ jboolean SWIGSTDCALL CSharp_esfjni_JObject_isJObjectArray___(void * jarg1) {
+  /* ctype jboolean */ jboolean jresult ;
+  _jobject *arg1 = (_jobject *) 0 ;
+  jboolean result;
+  
+  arg1 = (_jobject *)jarg1; 
+  result = (jboolean)_jobject_isJObjectArray(arg1);
+  /* out jboolean */ jresult = result; 
+  return jresult;
 }
 
 
@@ -1376,6 +1723,114 @@ SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JValue_l_get___(void * jarg1) {
   arg1 = (jvalue *)jarg1; 
   result = (jobject) ((arg1)->l);
   jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JValue_New__SWIG_0___(/* ctype jboolean */ jboolean jarg1) {
+  void * jresult ;
+  jboolean arg1 ;
+  jvalue result;
+  
+  /* in jboolean */ arg1 = (jboolean)jarg1; 
+  result = jvalue_New__SWIG_0(arg1);
+  jresult = new jvalue((const jvalue &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JValue_New__SWIG_1___(signed char jarg1) {
+  void * jresult ;
+  jbyte arg1 ;
+  jvalue result;
+  
+  arg1 = (jbyte)jarg1; 
+  result = jvalue_New__SWIG_1(arg1);
+  jresult = new jvalue((const jvalue &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JValue_New__SWIG_2___(/* ctype jchar */ jchar jarg1) {
+  void * jresult ;
+  jchar arg1 ;
+  jvalue result;
+  
+  /* in jchar */ arg1 = (jchar)jarg1; 
+  result = jvalue_New__SWIG_2(arg1);
+  jresult = new jvalue((const jvalue &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JValue_New__SWIG_3___(short jarg1) {
+  void * jresult ;
+  jshort arg1 ;
+  jvalue result;
+  
+  arg1 = (jshort)jarg1; 
+  result = jvalue_New__SWIG_3(arg1);
+  jresult = new jvalue((const jvalue &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JValue_New__SWIG_4___(long jarg1) {
+  void * jresult ;
+  jint arg1 ;
+  jvalue result;
+  
+  arg1 = (jint)jarg1; 
+  result = jvalue_New__SWIG_4(arg1);
+  jresult = new jvalue((const jvalue &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JValue_New__SWIG_5___(long long jarg1) {
+  void * jresult ;
+  jlong arg1 ;
+  jvalue result;
+  
+  arg1 = (jlong)jarg1; 
+  result = jvalue_New__SWIG_5(arg1);
+  jresult = new jvalue((const jvalue &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JValue_New__SWIG_6___(float jarg1) {
+  void * jresult ;
+  jfloat arg1 ;
+  jvalue result;
+  
+  arg1 = (jfloat)jarg1; 
+  result = jvalue_New__SWIG_6(arg1);
+  jresult = new jvalue((const jvalue &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JValue_New__SWIG_7___(double jarg1) {
+  void * jresult ;
+  jdouble arg1 ;
+  jvalue result;
+  
+  arg1 = (jdouble)jarg1; 
+  result = jvalue_New__SWIG_7(arg1);
+  jresult = new jvalue((const jvalue &)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_esfjni_JValue_New__SWIG_8___(void * jarg1) {
+  void * jresult ;
+  jobject arg1 = (jobject) 0 ;
+  jvalue result;
+  
+  arg1 = (jobject)jarg1; 
+  result = jvalue_New__SWIG_8(arg1);
+  jresult = new jvalue((const jvalue &)result); 
   return jresult;
 }
 

@@ -10,9 +10,7 @@
 
 // Defines the template instantiations
 %template(Ref_JavaVM) Ref<JavaVM>;
-
 %template(Buffer_JavaVM) Buffer<JavaVM>;
-
 
 // Extends JavaVM_ with better alternatives to ignored methods.
 %extend JavaVM_ {

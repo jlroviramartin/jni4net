@@ -177,25 +177,7 @@ CSHARP_ARRAYS(jvalue, JValue)
 %cs_struct(void_p, System.IntPtr)
 
 // Renames to get better names
-%rename(JClass) _jclass;
-
-%rename(JObject) _jobject;
-%rename(JArray) _jarray;
-%rename(JString) _jstring;
-%rename(JThrowable) _jthrowable;
-
-%rename(JObjectArray) _jobjectArray;
-%rename(JBooleanArray) _jbooleanArray;
-%rename(JCharArray) _jcharArray;
-%rename(JByteArray) _jbyteArray;
-%rename(JShortArray) _jshortArray;
-%rename(JIntArray) _jintArray;
-%rename(JLongArray) _jlongArray;
-%rename(JFloatArray) _jfloatArray;
-%rename(JDoubleArray) _jdoubleArray;
-
 %rename(JObjectRefType) jobjectRefType;
-%rename(JValue) jvalue;
 
 %rename(JFieldID) jfieldID;
 %rename(JMethodID) jmethodID;
@@ -205,6 +187,9 @@ typedef struct {
 
 typedef struct {
 } jmethodID;
+
+// Defines the template instantiations
+%template(Ref_JNIEnv) Ref<JNIEnv>;
 
 // Extrends JNIEnv_ with better alternatives to the ignored methods (JNIEnv_ and JNI_)
 %extend JNIEnv_ {
@@ -276,5 +261,3 @@ typedef struct {
         return ret;
     }
 }
-
-%template(Ref_JNIEnv) Ref<JNIEnv>;

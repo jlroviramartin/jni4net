@@ -1,3 +1,16 @@
+// Copyright 2019 Jose Luis Rovira Martin
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 using es.jni;
 using Jni;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -32,7 +45,7 @@ namespace Jni4Csharp.Test.Core
         {
             Setup();
 
-            JavaVMOption options = new JavaVMOption();
+            es.jni.JavaVMOption options = new JavaVMOption();
             //options.optionString = $@"-Djava.class.path={jdkPath}";
             options.optionString = "";
 
@@ -50,10 +63,28 @@ namespace Jni4Csharp.Test.Core
                 Debug.WriteLine(msg);
                 throw new Exception(msg);
             }
+            JavaVM javaVM = refJavaVM.getValue();
             JNIEnv jniEnv = refJNIEnv.getValue();
 
-            JClass clazz = jniEnv.FindClass("java/lang/Object");
-            Debug.WriteLine("Class " + clazz);
+            JClass jclazz = jniEnv.FindClass("java/lang/Object");
+            Debug.WriteLine("jclazz " + jclazz);
+
+            jniEnv.DeleteLocalRef(jclazz);
+
+            GC(jniEnv);
+
+            JMethodID jinit = jniEnv.GetMethodID(jclazz, "<init>", "()V");
+            JObject jinstance = jniEnv.NewObject(jclazz, jinit, new JValue[0]);
+
+            JObject jref = jniEnv.NewGlobalRef(jinstance);
+
+        }
+
+        private void GC(JNIEnv jniEnv)
+        {
+            JClass systemClass = jniEnv.FindClass("java/lang/System");
+            JMethodID systemGCMethod = jniEnv.GetStaticMethodID(systemClass, "gc", "()V");
+            jniEnv.CallStaticVoidMethod(systemClass, systemGCMethod, JValue.Empty);
         }
     }
 }
