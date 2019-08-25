@@ -34,6 +34,11 @@ public class JArray : JObject {
     }
   }
 
+  public int GetLength(JNIEnv env) {
+    int ret = JNIPINVOKE.JArray_GetLength(swigCPtr, JNIEnv.getCPtr(env));
+    return ret;
+  }
+
   public JArray() : this(JNIPINVOKE.new_JArray(), true) {
   }
 

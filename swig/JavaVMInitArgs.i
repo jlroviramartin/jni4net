@@ -34,8 +34,8 @@
 
     jint length() { return $self->nOptions; }
 
-    JavaVMOption get(jint i) { return $self->options[i]; }
-    void set(jint i, JavaVMOption value) { $self->options[i] = value; }
+    JavaVMOption get(jsize i) { return $self->options[i]; }
+    void set(jsize i, JavaVMOption value) { $self->options[i] = value; }
 
     jboolean isIgnoreUnrecognized() { return $self->ignoreUnrecognized; }
     void setIgnoreUnrecognized(jboolean value) { $self->ignoreUnrecognized = value; }

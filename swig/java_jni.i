@@ -20,6 +20,7 @@
 %include <JavaVMInitArgs.i>
 %include <JValue.i>
 %include <JObject.i>
+%include <JArray.i>
 %include <JavaVM.i>
 %include <JNIEnv.i>
 

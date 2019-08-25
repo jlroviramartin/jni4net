@@ -10,7 +10,7 @@
 
 namespace es.jni {
 
-public class JByteArray : JArray {
+public unsafe class JByteArray : JArray {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
   internal JByteArray(global::System.IntPtr cPtr, bool cMemoryOwn) : base(JNIPINVOKE.JByteArray_SWIGUpcast(cPtr), cMemoryOwn) {
@@ -32,6 +32,47 @@ public class JByteArray : JArray {
       }
       base.Dispose(disposing);
     }
+  }
+
+  public static JByteArray New(JNIEnv env, int len) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JByteArray_New(JNIEnv.getCPtr(env), len);
+    JByteArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JByteArray(cPtr, false);
+    return ret;
+  }
+
+  public PrimitiveArray_jbyte GetElements(JNIEnv env, ref bool isCopy) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JByteArray_GetElements(swigCPtr, JNIEnv.getCPtr(env), ref isCopy);
+    PrimitiveArray_jbyte ret = (cPtr == global::System.IntPtr.Zero) ? null : new PrimitiveArray_jbyte(cPtr, false);
+    return ret;
+  }
+
+  public void ReleaseElements(JNIEnv env, PrimitiveArray_jbyte elems, int mode) {
+    JNIPINVOKE.JByteArray_ReleaseElements(swigCPtr, JNIEnv.getCPtr(env), PrimitiveArray_jbyte.getCPtr(elems), mode);
+  }
+
+  public void GetRegion(JNIEnv env, int start, int len, sbyte[] buf) {
+    fixed ( sbyte* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JByteArray_GetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public void SetRegion(JNIEnv env, int start, int len, sbyte[] buf) {
+    fixed ( sbyte* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JByteArray_SetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public sbyte Get(JNIEnv env, int index) {
+    sbyte ret = JNIPINVOKE.JByteArray_Get(swigCPtr, JNIEnv.getCPtr(env), index);
+    return ret;
+  }
+
+  public void Set(JNIEnv env, int index, sbyte value) {
+    JNIPINVOKE.JByteArray_Set(swigCPtr, JNIEnv.getCPtr(env), index, value);
   }
 
   public JByteArray() : this(JNIPINVOKE.new_JByteArray(), true) {

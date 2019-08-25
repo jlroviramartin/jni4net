@@ -10,7 +10,7 @@
 
 namespace es.jni {
 
-public class JIntArray : JArray {
+public unsafe class JIntArray : JArray {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
   internal JIntArray(global::System.IntPtr cPtr, bool cMemoryOwn) : base(JNIPINVOKE.JIntArray_SWIGUpcast(cPtr), cMemoryOwn) {
@@ -32,6 +32,47 @@ public class JIntArray : JArray {
       }
       base.Dispose(disposing);
     }
+  }
+
+  public static JIntArray New(JNIEnv env, int len) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JIntArray_New(JNIEnv.getCPtr(env), len);
+    JIntArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JIntArray(cPtr, false);
+    return ret;
+  }
+
+  public PrimitiveArray_jint GetElements(JNIEnv env, ref bool isCopy) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JIntArray_GetElements(swigCPtr, JNIEnv.getCPtr(env), ref isCopy);
+    PrimitiveArray_jint ret = (cPtr == global::System.IntPtr.Zero) ? null : new PrimitiveArray_jint(cPtr, false);
+    return ret;
+  }
+
+  public void ReleaseElements(JNIEnv env, PrimitiveArray_jint elems, int mode) {
+    JNIPINVOKE.JIntArray_ReleaseElements(swigCPtr, JNIEnv.getCPtr(env), PrimitiveArray_jint.getCPtr(elems), mode);
+  }
+
+  public void GetRegion(JNIEnv env, int start, int len, int[] buf) {
+    fixed ( int* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JIntArray_GetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public void SetRegion(JNIEnv env, int start, int len, int[] buf) {
+    fixed ( int* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JIntArray_SetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public int Get(JNIEnv env, int index) {
+    int ret = JNIPINVOKE.JIntArray_Get(swigCPtr, JNIEnv.getCPtr(env), index);
+    return ret;
+  }
+
+  public void Set(JNIEnv env, int index, int value) {
+    JNIPINVOKE.JIntArray_Set(swigCPtr, JNIEnv.getCPtr(env), index, value);
   }
 
   public JIntArray() : this(JNIPINVOKE.new_JIntArray(), true) {

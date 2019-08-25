@@ -10,7 +10,7 @@
 
 namespace es.jni {
 
-public class JCharArray : JArray {
+public unsafe class JCharArray : JArray {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
   internal JCharArray(global::System.IntPtr cPtr, bool cMemoryOwn) : base(JNIPINVOKE.JCharArray_SWIGUpcast(cPtr), cMemoryOwn) {
@@ -32,6 +32,48 @@ public class JCharArray : JArray {
       }
       base.Dispose(disposing);
     }
+  }
+
+  public static JCharArray New(JNIEnv env, int len) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JCharArray_New(JNIEnv.getCPtr(env), len);
+    JCharArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JCharArray(cPtr, false);
+    return ret;
+  }
+
+  public PrimitiveArray_jchar GetElements(JNIEnv env, ref bool isCopy) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JCharArray_GetElements(swigCPtr, JNIEnv.getCPtr(env), ref isCopy);
+    PrimitiveArray_jchar ret = (cPtr == global::System.IntPtr.Zero) ? null : new PrimitiveArray_jchar(cPtr, false);
+    return ret;
+  }
+
+  public void ReleaseElements(JNIEnv env, PrimitiveArray_jchar elems, int mode) {
+    JNIPINVOKE.JCharArray_ReleaseElements(swigCPtr, JNIEnv.getCPtr(env), PrimitiveArray_jchar.getCPtr(elems), mode);
+  }
+
+  public void GetRegion(JNIEnv env, int start, int len, char[] buf) {
+    fixed ( char* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JCharArray_GetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public void SetRegion(JNIEnv env, int start, int len, char[] buf) {
+    fixed ( char* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JCharArray_SetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public /* cstype jchar */ char Get(JNIEnv env, int index)  {
+    // csout jchar
+    char ret = JNIPINVOKE.JCharArray_Get(swigCPtr, JNIEnv.getCPtr(env), index);
+    return ret;
+  } 
+
+  public void Set(JNIEnv env, int index, /* cstype jchar */ char value) {
+    JNIPINVOKE.JCharArray_Set(swigCPtr, JNIEnv.getCPtr(env), index, /* csin jchar */ value);
   }
 
   public JCharArray() : this(JNIPINVOKE.new_JCharArray(), true) {

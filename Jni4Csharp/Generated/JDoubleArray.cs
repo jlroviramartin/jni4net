@@ -10,7 +10,7 @@
 
 namespace es.jni {
 
-public class JDoubleArray : JArray {
+public unsafe class JDoubleArray : JArray {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
   internal JDoubleArray(global::System.IntPtr cPtr, bool cMemoryOwn) : base(JNIPINVOKE.JDoubleArray_SWIGUpcast(cPtr), cMemoryOwn) {
@@ -32,6 +32,53 @@ public class JDoubleArray : JArray {
       }
       base.Dispose(disposing);
     }
+  }
+
+  public System.Collections.Generic.IEnumerable<double> GetEnumerator(JNIEnv env) {
+      for (int i = 0, sz = this.GetLength(env); i < sz; i++) {
+          yield return Get(env, i);
+      }
+  }
+
+  public static JDoubleArray New(JNIEnv env, int len) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JDoubleArray_New(JNIEnv.getCPtr(env), len);
+    JDoubleArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JDoubleArray(cPtr, false);
+    return ret;
+  }
+
+  public PrimitiveArray_jdouble GetElements(JNIEnv env, ref bool isCopy) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JDoubleArray_GetElements(swigCPtr, JNIEnv.getCPtr(env), ref isCopy);
+    PrimitiveArray_jdouble ret = (cPtr == global::System.IntPtr.Zero) ? null : new PrimitiveArray_jdouble(cPtr, false);
+    return ret;
+  }
+
+  public void ReleaseElements(JNIEnv env, PrimitiveArray_jdouble elems, int mode) {
+    JNIPINVOKE.JDoubleArray_ReleaseElements(swigCPtr, JNIEnv.getCPtr(env), PrimitiveArray_jdouble.getCPtr(elems), mode);
+  }
+
+  public void GetRegion(JNIEnv env, int start, int len, double[] buf) {
+    fixed ( double* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JDoubleArray_GetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public void SetRegion(JNIEnv env, int start, int len, double[] buf) {
+    fixed ( double* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JDoubleArray_SetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public double Get(JNIEnv env, int index) {
+    double ret = JNIPINVOKE.JDoubleArray_Get(swigCPtr, JNIEnv.getCPtr(env), index);
+    return ret;
+  }
+
+  public void Set(JNIEnv env, int index, double value) {
+    JNIPINVOKE.JDoubleArray_Set(swigCPtr, JNIEnv.getCPtr(env), index, value);
   }
 
   public JDoubleArray() : this(JNIPINVOKE.new_JDoubleArray(), true) {

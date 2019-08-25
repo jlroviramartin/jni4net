@@ -2,8 +2,6 @@
 
 %ignore JNINativeInterface_;
 
-%typemap(csclassmodifiers) JNIEnv_ "public unsafe class"
-
 // Cleans default bool mapping to prevent some mapping errors..
 %clear bool FIXED[];
 %clear char FIXED[]; // ?
@@ -190,6 +188,8 @@ typedef struct {
 
 // Defines the template instantiations
 %template(Ref_JNIEnv) Ref<JNIEnv>;
+
+%typemap(csclassmodifiers) JNIEnv_ "public unsafe class"
 
 // Extrends JNIEnv_ with better alternatives to the ignored methods (JNIEnv_ and JNI_)
 %extend JNIEnv_ {

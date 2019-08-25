@@ -10,7 +10,7 @@
 
 namespace es.jni {
 
-public class JLongArray : JArray {
+public unsafe class JLongArray : JArray {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
   internal JLongArray(global::System.IntPtr cPtr, bool cMemoryOwn) : base(JNIPINVOKE.JLongArray_SWIGUpcast(cPtr), cMemoryOwn) {
@@ -32,6 +32,47 @@ public class JLongArray : JArray {
       }
       base.Dispose(disposing);
     }
+  }
+
+  public static JLongArray New(JNIEnv env, int len) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JLongArray_New(JNIEnv.getCPtr(env), len);
+    JLongArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JLongArray(cPtr, false);
+    return ret;
+  }
+
+  public PrimitiveArray_jlong GetElements(JNIEnv env, ref bool isCopy) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JLongArray_GetElements(swigCPtr, JNIEnv.getCPtr(env), ref isCopy);
+    PrimitiveArray_jlong ret = (cPtr == global::System.IntPtr.Zero) ? null : new PrimitiveArray_jlong(cPtr, false);
+    return ret;
+  }
+
+  public void ReleaseElements(JNIEnv env, PrimitiveArray_jlong elems, int mode) {
+    JNIPINVOKE.JLongArray_ReleaseElements(swigCPtr, JNIEnv.getCPtr(env), PrimitiveArray_jlong.getCPtr(elems), mode);
+  }
+
+  public void GetRegion(JNIEnv env, int start, int len, long[] buf) {
+    fixed ( long* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JLongArray_GetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public void SetRegion(JNIEnv env, int start, int len, long[] buf) {
+    fixed ( long* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JLongArray_SetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public long Get(JNIEnv env, int index) {
+    long ret = JNIPINVOKE.JLongArray_Get(swigCPtr, JNIEnv.getCPtr(env), index);
+    return ret;
+  }
+
+  public void Set(JNIEnv env, int index, long value) {
+    JNIPINVOKE.JLongArray_Set(swigCPtr, JNIEnv.getCPtr(env), index, value);
   }
 
   public JLongArray() : this(JNIPINVOKE.new_JLongArray(), true) {

@@ -10,7 +10,7 @@
 
 namespace es.jni {
 
-public class JObjectArray : JArray {
+public unsafe class JObjectArray : JArray {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
   internal JObjectArray(global::System.IntPtr cPtr, bool cMemoryOwn) : base(JNIPINVOKE.JObjectArray_SWIGUpcast(cPtr), cMemoryOwn) {
@@ -32,6 +32,28 @@ public class JObjectArray : JArray {
       }
       base.Dispose(disposing);
     }
+  }
+
+  public System.Collections.Generic.IEnumerable<JObject> GetEnumerator(JNIEnv env) {
+      for (int i = 0, sz = this.GetLength(env); i < sz; i++) {
+          yield return Get(env, i);
+      }
+  }
+
+  public static JObjectArray New(JNIEnv env, int len, JClass clazz, JObject init) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObjectArray_New(JNIEnv.getCPtr(env), len, JClass.getCPtr(clazz), JObject.getCPtr(init));
+    JObjectArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JObjectArray(cPtr, false);
+    return ret;
+  }
+
+  public JObject Get(JNIEnv env, int index) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JObjectArray_Get(swigCPtr, JNIEnv.getCPtr(env), index);
+    JObject ret = (cPtr == global::System.IntPtr.Zero) ? null : new JObject(cPtr, false);
+    return ret;
+  }
+
+  public void Set(JNIEnv env, int index, JObject value) {
+    JNIPINVOKE.JObjectArray_Set(swigCPtr, JNIEnv.getCPtr(env), index, JObject.getCPtr(value));
   }
 
   public JObjectArray() : this(JNIPINVOKE.new_JObjectArray(), true) {

@@ -69,8 +69,6 @@ namespace Jni4Csharp.Test.Core
             JClass jclazz = jniEnv.FindClass("java/lang/Object");
             Debug.WriteLine("jclazz " + jclazz);
 
-            jniEnv.DeleteLocalRef(jclazz);
-
             GC(jniEnv);
 
             JMethodID jinit = jniEnv.GetMethodID(jclazz, "<init>", "()V");
@@ -78,7 +76,27 @@ namespace Jni4Csharp.Test.Core
 
             JObject jref = jniEnv.NewGlobalRef(jinstance);
 
+            Test(jniEnv, jclazz);
+
+            jniEnv.DeleteLocalRef(jclazz);
         }
+
+        private void Test(JNIEnv jniEnv, JClass jclazz)
+        {
+            JMethodID jgetConstructors = jniEnv.GetMethodID(jclazz, "getConstructors", "()[Ljava.lang.reflect;");
+            JObject ret = jniEnv.CallObjectMethod(jclazz, jgetConstructors, JValue.Empty);
+            JObjectArray array = ret.toJObjectArray();
+            foreach (JObject jobj in array.GetEnumerator(jniEnv))
+            {
+
+            }
+        }
+
+        public enum ElementType
+        {
+            Boolean, Char, Byte, Short, Int, Long, Float, Double, Object
+        }
+
 
         private void GC(JNIEnv jniEnv)
         {

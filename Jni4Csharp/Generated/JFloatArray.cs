@@ -10,7 +10,7 @@
 
 namespace es.jni {
 
-public class JFloatArray : JArray {
+public unsafe class JFloatArray : JArray {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
   internal JFloatArray(global::System.IntPtr cPtr, bool cMemoryOwn) : base(JNIPINVOKE.JFloatArray_SWIGUpcast(cPtr), cMemoryOwn) {
@@ -32,6 +32,47 @@ public class JFloatArray : JArray {
       }
       base.Dispose(disposing);
     }
+  }
+
+  public static JFloatArray New(JNIEnv env, int len) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JFloatArray_New(JNIEnv.getCPtr(env), len);
+    JFloatArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JFloatArray(cPtr, false);
+    return ret;
+  }
+
+  public PrimitiveArray_jfloat GetElements(JNIEnv env, ref bool isCopy) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JFloatArray_GetElements(swigCPtr, JNIEnv.getCPtr(env), ref isCopy);
+    PrimitiveArray_jfloat ret = (cPtr == global::System.IntPtr.Zero) ? null : new PrimitiveArray_jfloat(cPtr, false);
+    return ret;
+  }
+
+  public void ReleaseElements(JNIEnv env, PrimitiveArray_jfloat elems, int mode) {
+    JNIPINVOKE.JFloatArray_ReleaseElements(swigCPtr, JNIEnv.getCPtr(env), PrimitiveArray_jfloat.getCPtr(elems), mode);
+  }
+
+  public void GetRegion(JNIEnv env, int start, int len, float[] buf) {
+    fixed ( float* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JFloatArray_GetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public void SetRegion(JNIEnv env, int start, int len, float[] buf) {
+    fixed ( float* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JFloatArray_SetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public float Get(JNIEnv env, int index) {
+    float ret = JNIPINVOKE.JFloatArray_Get(swigCPtr, JNIEnv.getCPtr(env), index);
+    return ret;
+  }
+
+  public void Set(JNIEnv env, int index, float value) {
+    JNIPINVOKE.JFloatArray_Set(swigCPtr, JNIEnv.getCPtr(env), index, value);
   }
 
   public JFloatArray() : this(JNIPINVOKE.new_JFloatArray(), true) {

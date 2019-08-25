@@ -10,7 +10,7 @@
 
 namespace es.jni {
 
-public class JShortArray : JArray {
+public unsafe class JShortArray : JArray {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
   internal JShortArray(global::System.IntPtr cPtr, bool cMemoryOwn) : base(JNIPINVOKE.JShortArray_SWIGUpcast(cPtr), cMemoryOwn) {
@@ -32,6 +32,47 @@ public class JShortArray : JArray {
       }
       base.Dispose(disposing);
     }
+  }
+
+  public static JShortArray New(JNIEnv env, int len) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JShortArray_New(JNIEnv.getCPtr(env), len);
+    JShortArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JShortArray(cPtr, false);
+    return ret;
+  }
+
+  public PrimitiveArray_jshort GetElements(JNIEnv env, ref bool isCopy) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JShortArray_GetElements(swigCPtr, JNIEnv.getCPtr(env), ref isCopy);
+    PrimitiveArray_jshort ret = (cPtr == global::System.IntPtr.Zero) ? null : new PrimitiveArray_jshort(cPtr, false);
+    return ret;
+  }
+
+  public void ReleaseElements(JNIEnv env, PrimitiveArray_jshort elems, int mode) {
+    JNIPINVOKE.JShortArray_ReleaseElements(swigCPtr, JNIEnv.getCPtr(env), PrimitiveArray_jshort.getCPtr(elems), mode);
+  }
+
+  public void GetRegion(JNIEnv env, int start, int len, short[] buf) {
+    fixed ( short* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JShortArray_GetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public void SetRegion(JNIEnv env, int start, int len, short[] buf) {
+    fixed ( short* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JShortArray_SetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public short Get(JNIEnv env, int index) {
+    short ret = JNIPINVOKE.JShortArray_Get(swigCPtr, JNIEnv.getCPtr(env), index);
+    return ret;
+  }
+
+  public void Set(JNIEnv env, int index, short value) {
+    JNIPINVOKE.JShortArray_Set(swigCPtr, JNIEnv.getCPtr(env), index, value);
   }
 
   public JShortArray() : this(JNIPINVOKE.new_JShortArray(), true) {

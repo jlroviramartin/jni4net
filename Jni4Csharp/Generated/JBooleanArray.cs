@@ -10,7 +10,7 @@
 
 namespace es.jni {
 
-public class JBooleanArray : JArray {
+public unsafe class JBooleanArray : JArray {
   private global::System.Runtime.InteropServices.HandleRef swigCPtr;
 
   internal JBooleanArray(global::System.IntPtr cPtr, bool cMemoryOwn) : base(JNIPINVOKE.JBooleanArray_SWIGUpcast(cPtr), cMemoryOwn) {
@@ -32,6 +32,48 @@ public class JBooleanArray : JArray {
       }
       base.Dispose(disposing);
     }
+  }
+
+  public static JBooleanArray New(JNIEnv env, int len) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JBooleanArray_New(JNIEnv.getCPtr(env), len);
+    JBooleanArray ret = (cPtr == global::System.IntPtr.Zero) ? null : new JBooleanArray(cPtr, false);
+    return ret;
+  }
+
+  public PrimitiveArray_jboolean GetElements(JNIEnv env, ref bool isCopy) {
+    global::System.IntPtr cPtr = JNIPINVOKE.JBooleanArray_GetElements(swigCPtr, JNIEnv.getCPtr(env), ref isCopy);
+    PrimitiveArray_jboolean ret = (cPtr == global::System.IntPtr.Zero) ? null : new PrimitiveArray_jboolean(cPtr, false);
+    return ret;
+  }
+
+  public void ReleaseElements(JNIEnv env, PrimitiveArray_jboolean elems, int mode) {
+    JNIPINVOKE.JBooleanArray_ReleaseElements(swigCPtr, JNIEnv.getCPtr(env), PrimitiveArray_jboolean.getCPtr(elems), mode);
+  }
+
+  public void GetRegion(JNIEnv env, int start, int len, bool[] buf) {
+    fixed ( bool* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JBooleanArray_GetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public void SetRegion(JNIEnv env, int start, int len, bool[] buf) {
+    fixed ( bool* swig_ptrTo_buf = buf ) {
+    {
+      JNIPINVOKE.JBooleanArray_SetRegion(swigCPtr, JNIEnv.getCPtr(env), start, len, (global::System.IntPtr)swig_ptrTo_buf);
+    }
+    }
+  }
+
+  public /* cstype jboolean */ bool Get(JNIEnv env, int index)  {
+    // csout jboolean
+    bool ret = JNIPINVOKE.JBooleanArray_Get(swigCPtr, JNIEnv.getCPtr(env), index);
+    return ret;
+  } 
+
+  public void Set(JNIEnv env, int index, /* cstype jboolean */ bool value) {
+    JNIPINVOKE.JBooleanArray_Set(swigCPtr, JNIEnv.getCPtr(env), index, /* csin jboolean */ value);
   }
 
   public JBooleanArray() : this(JNIPINVOKE.new_JBooleanArray(), true) {
